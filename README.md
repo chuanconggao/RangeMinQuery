@@ -1,6 +1,8 @@
-# [Segment Tree](http://www.wikiwand.com/en/Segment_tree) Implementation in Python
+# Implementation in Python for Range Minimum Query Problem
 
-Use `SegmentTree()` to initialize the tree with a list of keys, in **comparable and hashable** type. `func` specifies how the best value is computed for a range of keys. `default` specifies the default value for each key. `maxChildNum` specifies the maximum number of children for each node.
+This data structure solves the [range minimum query problem](https://en.wikipedia.org/wiki/Range_minimum_query) of finding the minimal value in a sub-array of an array of comparable objects.
+
+Use `SegmentTree()` to initialize the tree with a list of keys, in **comparable and hashable** type. `func` specifies how the best value is computed for any range of keys. `default` specifies the default value for each key. `maxChildNum` specifies the maximum number of children for each node.
 ```Python
 tree = SegmentTree(
   [1, 2, 3, 4, 5],
