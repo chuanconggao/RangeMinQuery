@@ -24,4 +24,4 @@ Use `query()` to to find the best value of a range of keys. The range is denoted
 ```Python
 tree.query((1, 3))
 ```
-The time complexity should be O(k * log n).
+The time complexity should be O(log n).
