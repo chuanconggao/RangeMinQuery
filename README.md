@@ -1,12 +1,12 @@
 # Implementation in Python for Range Minimum Query Problem
 
-This data structure solves the [range minimum query problem](https://en.wikipedia.org/wiki/Range_minimum_query) of finding the minimal value in a sub-array of an array of comparable objects.
+This data structure solves the [range minimum query problem](https://en.wikipedia.org/wiki/Range_minimum_query) of finding the minimal value in a sub-array of an array of comparable objects. Different from the original problem, this data structure also supports updating the values.
 
 + Use `SegmentTree()` to initialize the tree with a list of keys, in **comparable and hashable** type. `func` specifies how the best value is computed for any range of keys. `default` specifies the default value for each key. `maxChildNum` specifies the maximum number of children for each node.
 ```Python
 tree = SegmentTree(
-  [1, 2, 3, 4, 5],
-  func=min, default=0, maxChildNum=3
+    [1, 2, 3, 4, 5],
+    func=min, default=0, maxChildNum=3
 )
 ```
 
