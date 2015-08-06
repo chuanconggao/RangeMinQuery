@@ -73,6 +73,9 @@ class SegmentTree(object):
                     if self.__intersects__(queryRange, cNode.nodeRange)
                 )
 
+        if queryRange[0] > queryRange[1]:
+            raise
+
         if not self.__intersects__(queryRange, self.root.nodeRange):
             raise
 
