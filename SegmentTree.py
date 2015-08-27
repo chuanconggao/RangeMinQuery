@@ -10,6 +10,12 @@ class SegmentTreeNode(object):
         self.children = []
         self.parent = None
 
+def __covers(a, b):
+    return a[0] <= b[0] and b[1] <= a[1]
+
+def __intersects(a, b):
+    return not (a[1] < b[0] or a[0] > b[1])
+
 class SegmentTree(object):
     def __init__(self, keys, func, default=None, maxChildNum=2):
         self.func = func
@@ -32,12 +38,6 @@ class SegmentTree(object):
             l = nl
 
         self.root = l[0]
-
-    def __covers__(self, a, b):
-        return a[0] <= b[0] and b[1] <= a[1]
-
-    def __intersects__(self, a, b):
-        return not (a[1] < b[0] or a[0] > b[1])
 
     def update(self, keyValueDict):
         ul = set()
@@ -64,19 +64,19 @@ class SegmentTree(object):
 
     def query(self, queryRange):
         def query_aux(node):
-            if self.__covers__(queryRange, node.nodeRange):
+            if __covers(queryRange, node.nodeRange):
                 return node.value
             else:
                 return self.func(
                     query_aux(cNode)
                     for cNode in node.children
-                    if self.__intersects__(queryRange, cNode.nodeRange)
+                    if __intersects(queryRange, cNode.nodeRange)
                 )
 
         if queryRange[0] > queryRange[1]:
             raise
 
-        if not self.__intersects__(queryRange, self.root.nodeRange):
+        if not __intersects(queryRange, self.root.nodeRange):
             raise
 
         return query_aux(self.root)
