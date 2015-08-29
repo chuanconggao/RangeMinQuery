@@ -20,7 +20,7 @@ class SegmentTree(object):
     def __init__(self, keys, func, default=None, maxChildNum=2):
         self.func = func
 
-        l = [SegmentTreeNode((k, k)) for k in sorted(keys)]
+        l = [SegmentTreeNode((k, k), default) for k in sorted(keys)]
         self.mapping = {n.nodeRange[0]: n for n in l}
 
         while len(l) > 1:
