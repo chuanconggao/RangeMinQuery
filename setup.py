@@ -3,12 +3,12 @@ from setuptools import setup
 setup(
     name='RangeMinQuery',
     packages=['RangeMinQuery'],
-    version='0.1',
+    version='0.1.1',
     description='Solving the Range Minimum Query problem',
     author='Chuancong Gao',
     author_email='chuancong@gmail.com',
     url='https://github.com/chuanconggao/RangeMinQuery',
-    download_url='https://github.com/chuanconggao/RangeMinQuery/tarball/0.1',
+    download_url='https://github.com/chuanconggao/RangeMinQuery/tarball/0.1.1',
     keywords=['range', 'query'],
     license='MIT',
     classifiers=[
@@ -18,5 +18,6 @@ setup(
         'Programming Language :: Python :: 3'
     ],
     install_requires=[
+        'future>=0.16.0',
     ]
 )

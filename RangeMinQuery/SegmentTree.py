@@ -1,7 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function, division
+from __future__ import absolute_import, division, print_function, unicode_literals
+from builtins import *
 
 class SegmentTreeNode(object):
     def __init__(self, nodeRange, default=None):
@@ -28,7 +29,7 @@ class SegmentTree(object):
         while len(l) > 1:
             nl = []
 
-            for i in xrange(0, len(l), maxChildNum):
+            for i in range(0, len(l), maxChildNum):
                 c = l[i:i+maxChildNum]
                 n = SegmentTreeNode((c[0].nodeRange[0], c[-1].nodeRange[1]), default)
                 n.children = c
@@ -44,7 +45,7 @@ class SegmentTree(object):
     def update(self, keyValueDict):
         ul = set()
 
-        for (k, v) in keyValueDict.iteritems():
+        for (k, v) in keyValueDict.items():
             node = self.mapping[k]
 
             if node.value != v:
