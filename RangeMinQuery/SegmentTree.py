@@ -11,27 +11,36 @@ class SegmentTreeNode(object):
         self.children = []
         self.parent = None
 
+
 class SegmentTree(object):
     @staticmethod
     def __covers(a, b):
         return a[0] <= b[0] and b[1] <= a[1]
 
+
     @staticmethod
     def __intersects(a, b):
         return not (a[1] < b[0] or a[0] > b[1])
 
+
     def __init__(self, keys, func, default=None, maxChildNum=2):
         self.func = func
 
-        l = [SegmentTreeNode((k, k), default) for k in sorted(keys)]
+        l = [
+            SegmentTreeNode((k, k), default)
+            for k in sorted(keys)
+        ]
         self.mapping = {n.nodeRange[0]: n for n in l}
 
         while len(l) > 1:
             nl = []
 
             for i in range(0, len(l), maxChildNum):
-                c = l[i:i+maxChildNum]
-                n = SegmentTreeNode((c[0].nodeRange[0], c[-1].nodeRange[1]), default)
+                c = l[i:i + maxChildNum]
+                n = SegmentTreeNode(
+                    (c[0].nodeRange[0], c[-1].nodeRange[1]),
+                    default
+                )
                 n.children = c
                 for x in c:
                     x.parent = n
@@ -41,6 +50,7 @@ class SegmentTree(object):
             l = nl
 
         self.root = l[0]
+
 
     def update(self, keyValueDict):
         ul = set()
@@ -65,6 +75,7 @@ class SegmentTree(object):
 
             ul = newUL
 
+
     def query(self, queryRange):
         def query_aux(node):
             if SegmentTree.__covers(queryRange, node.nodeRange):
@@ -75,6 +86,7 @@ class SegmentTree(object):
                 for cNode in node.children
                 if SegmentTree.__intersects(queryRange, cNode.nodeRange)
             )
+
 
         if queryRange[0] > queryRange[1]:
             raise
