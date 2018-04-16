@@ -1,4 +1,6 @@
-[![PyPI version](https://badge.fury.io/py/RangeMinQuery.svg)](https://badge.fury.io/py/RangeMinQuery)
+[![PyPi version](https://img.shields.io/pypi/v/RangeMinQuery.svg)](https://pypi.python.org/pypi/RangeMinQuery/)
+[![PyPi pyversions](https://img.shields.io/pypi/pyversions/RangeMinQuery.svg)](https://pypi.python.org/pypi/RangeMinQuery/)
+[![PyPi license](https://img.shields.io/pypi/l/RangeMinQuery.svg)](https://pypi.python.org/pypi/RangeMinQuery/)
 
 This data structure solves the [range minimum query problem](https://en.wikipedia.org/wiki/Range_minimum_query) of finding the minimal value in a sub-array of an array of comparable objects. Different from the original problem, this data structure also supports updating the values.
 
