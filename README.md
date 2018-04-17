@@ -28,13 +28,13 @@ The space complexity should be O(n).
 
 ## Updating
 
-You need to use `update()` to initialize the values, or update the values if necessary, by specifying a dictionary of key/value pairs. Currently, adding new keys is not supported yet. Given m values updated, the complexity should be O(m^2).
+You need to use `update()` to initialize the values, or update the values if necessary, by specifying a dictionary of key/value pairs. Currently, adding new keys is not supported yet.
 
 ```Python
 tree.update({1: 3, 4: 6})
 ```
 
-Given m values updated, the time complexity should be O(m).
+Given m values updated, the time complexity should be O(m^2).
 
 ## Querying
 
