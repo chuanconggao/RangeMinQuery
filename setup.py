@@ -1,28 +1,41 @@
-#! /usr/bin/env python
-# -*- coding: utf-8 -*-
+#! /usr/bin/env python3
 
 from setuptools import setup
 
+url = "https://github.com/chuanconggao/RangeMinQuery"
+version = "0.2"
+
 setup(
     name="RangeMinQuery",
+
     packages=["RangeMinQuery"],
-    version="0.1.2",
-    description="Solving the Range Minimum Query problem",
+    include_package_data=True,
+
+    url=url,
+
+    version=version,
+    download_url=f"{url}/tarball/{version}",
+
+    license="MIT",
+
     author="Chuancong Gao",
     author_email="chuancong@gmail.com",
-    url="https://github.com/chuanconggao/RangeMinQuery",
-    download_url="https://github.com/chuanconggao/RangeMinQuery/tarball/0.1.2",
+
+    description="Solving the Range Minimum Query problem",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+
     keywords=[
-        "range minimum query"
+        "range-minimum-query",
     ],
-    license="MIT",
     classifiers=[
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3"
     ],
+
     install_requires=[
-        "future>=0.16.0",
+        line.strip() for line in open("requirements.txt")
     ]
 )
