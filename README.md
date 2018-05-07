@@ -2,6 +2,8 @@
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/RangeMinQuery.svg)](https://pypi.python.org/pypi/RangeMinQuery/)
 [![PyPI license](https://img.shields.io/pypi/l/RangeMinQuery.svg)](https://pypi.python.org/pypi/RangeMinQuery/)
 
+This library has been merged with [extratools](https://github.com/chuanconggao/extratools). Future development continues there.
+
 This data structure solves the [range minimum query problem](https://en.wikipedia.org/wiki/Range_minimum_query) of finding the minimal value in a sub-array of an array of comparable objects. Different from the original problem, this data structure also supports updating the values.
 
 # Installation
